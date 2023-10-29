@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+h2{
+  font-family: 'Roboto', sans-serif;
+}
+
+        form {
+          background-color: white;
+          margin: auto;
+          width: 23%;
+          padding: 10px;
+        }
+        h2{
+            text-align: center;
+        }
+        .userdetails{
+            display: flex;
+        }
+        .details{
+            display: flex;
+        }
+        .inputbox{
+            margin: 5px;
+        }
+        .logo{
+            text-align: center;
+            font-size: 12px;
+        }
+        input[type=submit]{
+            background-color: rgb(5,107,175);
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+        }
+        input[type=reset]{
+            background-color: rgb(5,107,175);
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+        }
+        .logo p p1{
+            color: darkblue;
+        }
+        h2{
+            color: white;
+            font-size: 30px;
+        }
+        body{
+
+        
+        background-color:rgb(5, 107, 175);
+        }
+        
+    </style>
+</head>
+<body>
+   
+    
+    
+    <h2> Customer Survey Form</h2>
+    
+    <form id="myForm">
+
+        <div class="userdetails">
+        <div class="inputbox">
+            <span class="details"> First Name</span>
+            <input type="text"  >
+          </div>
+
+          <div class="inputbox">
+            <span class="details"> Last Name</span>
+            <input type="text"  >
+          </div>
+
+        </div>
+      Date of Birth:<br>
+      <input type="date" id="dob" name="dob" required> <br>
+      Country:<br>
+      <select id="country" name="country" required>
+        <option value="">Select...</option>
+        <option value="india">India</option>
+        <option value="usa">USA</option>
+        <option value="russia">RUSSIA</option>
+        <option value="england">ENGLAND</option>
+        <option value="australia">AUSTRALIA</option>
+        <option value="denmark">DENMARK</option>
+        <option value="colombia">COLOMBIA</option>
+        <option value="srilanka">SRILANKA</option>
+        <option value="netherland">NETHERLAND</option>
+        <option value="portugal">PORTUGAL</option>
+        <option value="argentina">ARGENTINA</option>
+        <!-- Add more options as needed -->
+      </select><br>
+      Gender:<br>
+      <input type="checkbox" id="male" name="gender" onclick="uncheckOthers(this)" value="male">
+      <label for="male">Male</label>
+      <input type="checkbox" id="female" name="gender"  onclick="uncheckOthers(this)"  value="female">
+      <label for="female">Female</label><br>
+      Profession:<br>
+      <input type="text" id="profession" name="profession" required><br>
+      Email:<br>
+      <input type="email" id="email" name="email" required><br>
+      Mobile Number:<br>
+      <input type="tel" id="mobile" name="mobile" required><br><br>
+    
+      <input type="submit"  value="Submit">
+      <input type="reset" value="Reset">
+    </form>
+    
+    <script>
+
+        function uncheckOthers(checkbox){
+            var checkboxes=document.getElementsByName(checkbox.name);
+            checkboxes.forEach(function(item){
+                if(item !==checkbox){
+                    item.checked= false;
+                }
+            });
+        }
+        
+    document.getElementById("myForm").addEventListener("submit", function(event){
+      event.preventDefault()
+      
+      // Perform validation checks here
+      
+      // Display popup with form values
+      alert("First Name: " + document.getElementById("fname").value + "\n"
+            + "Last Name: " + document.getElementById("lname").value + "\n"
+            // Add the rest of the form fields here
+           );
+      
+      // Reset the form
+      document.getElementById("myForm").reset();
+    });
+    </script>
+
+<div class="logo">
+    <p>© 2018 Customer Survey Form. All Rights Reserved | Design by <p1>W3Layouts</p1></p>
+</div>  
+    
+    
+     
+</body>
+</html>
